@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stattest-pro"
+version = "0.1.0"
+description = "End-to-End A/B Testing Analysis Framework with Sample Size Calculation and Automated Reporting"
+readme = "README.md"
+authors = [{name = "Bibek Dhakal"}]
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "statsmodels>=0.14.0",
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
+    "jinja2>=3.1.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.1.0",
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "pre-commit>=3.5.0"
+]
+notebooks = [
+    "jupyter>=1.0.0",
+    "ipykernel>=6.25.0"
+]
+
+[tool.setuptools.packages.find]
+include = ["stattest_pro*"]
+exclude = ["notebooks*", "tests*"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "B", "C4"]
+ignore = ["E501", "B008"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=stattest_pro --cov-report=term-missing --cov-report=html"

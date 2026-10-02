@@ -7,7 +7,7 @@ name = "stattest-pro"
 version = "0.1.0"
 description = "End-to-End A/B Testing Analysis Framework with Sample Size Calculation and Automated Reporting"
 readme = "README.md"
-authors = [{name = "Bibek Dhakal"}]
+authors = [{ name = "Bibek Dhakal" }]
 license = "MIT"
 requires-python = ">=3.10"
 dependencies = [
@@ -20,12 +20,19 @@ dependencies = [
     "jinja2>=3.1.0"
 ]
 
+[project.urls]
+Homepage = "https://github.com/Bibek-Dhakal/StatTest-Pro"
+Repository = "https://github.com/Bibek-Dhakal/StatTest-Pro"
+"Bug Tracker" = "https://github.com/Bibek-Dhakal/StatTest-Pro/issues"
+
 [project.optional-dependencies]
 dev = [
     "ruff>=0.1.0",
     "pytest>=7.4.0",
     "pytest-cov>=4.1.0",
-    "pre-commit>=3.5.0"
+    "pre-commit>=3.5.0",
+    "build>=1.0.3",
+    "twine>=4.0.2"
 ]
 notebooks = [
     "jupyter>=1.0.0",
